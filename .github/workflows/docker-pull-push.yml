@@ -23,7 +23,6 @@ jobs:
                     context: .    #it should be the root directory of the project where the Dockerfile is located
                     push: true
                     tags: |
-                      ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.GITHUB_HEAD_REF }}
-                      ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
-                      ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.GITHUB_SHA }}  
+                       ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.ref_name }}
+                       ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}  
                       #Simple hashing algorithm to generate unique identifiers for each commit
