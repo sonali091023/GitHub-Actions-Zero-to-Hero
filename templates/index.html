@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Interview Roadmap - 3 Years Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --trending: #f59e0b;
+            --success: #10b981;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: #334155;
+            --bg-card: #1a1f35;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2942 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .badge.trending {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--trending);
+            color: var(--trending);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .topics-list {
+            list-style: none;
+        }
+
+        .topic-item {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid rgba(52, 65, 84, 0.5);
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-item::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        .topic-item.trending {
+            color: var(--trending);
+            font-weight: 500;
+            background: rgba(245, 158, 11, 0.05);
+            margin: 0.5rem -1.5rem;
+            padding: 0.75rem 1.5rem;
+            border-left: 2px solid var(--trending);
+            border-bottom: none;
+        }
+
+        .trending-badge {
+            display: inline-block;
+            background: var(--trending);
+            color: var(--primary);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+        }
+
+        .trending-section {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .trending-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--trending);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .trending-section h2::before {
+            content: '🔥';
+            font-size: 1.5rem;
+        }
+
+        .trending-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .trending-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .trending-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--trending);
+        }
+
+        .trending-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .interview-prep {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .interview-prep h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .interview-prep h2::before {
+            content: '✓';
+            font-size: 1.5rem;
+        }
+
+        .interview-questions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .question-card {
+            background: var(--bg-card);
+            border-left: 3px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .question-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .question-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .skills-matrix {
+            margin-top: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .skills-matrix h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-light);
+        }
+
+        .skill-row {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(52, 65, 84, 0.5);
+        }
+
+        .skill-row:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-bar {
+            background: rgba(52, 65, 84, 0.5);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+
+        footer {
+            background: var(--secondary);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .badge-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .category-card {
+                transition: none;
+            }
+
+            .skill-bar-fill {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>DevOps Engineer Interview Roadmap</h1>
+            <p>Comprehensive Study Guide for 3+ Years Experience</p>
+            <div class="badge-container">
+                <span class="badge">Interview Focused</span>
+                <span class="badge">Trending Topics</span>
+                <span class="badge trending">2024-2026 Tech Stack</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="roadmap-grid">
+            <!-- Core DevOps & Principles -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">📋</div>
+                    <h2 class="category-title">Core DevOps Principles</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">DevOps Culture & Mindset</li>
+                    <li class="topic-item">CALMS Framework (Culture, Automation, Lean, Measurement, Sharing)</li>
+                    <li class="topic-item">SDLC & Agile Integration</li>
+                    <li class="topic-item">Infrastructure as Code (IaC)</li>
+                    <li class="topic-item">Configuration Management</li>
+                    <li class="topic-item">Continuous Integration & Deployment</li>
+                    <li class="topic-item">Feedback Loops & Metrics</li>
+                </ul>
+            </div>
+
+            <!-- CI/CD & Automation -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">⚙️</div>
+                    <h2 class="category-title">CI/CD & Automation</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Jenkins (Pipelines, Groovy, Declarative)</li>
+                    <li class="topic-item trending">GitHub Actions<span class="trending-badge">TRENDING</span></li>
+                    <li class="topic-item trending">GitLab CI/CD<span class="trending-badge">TRENDING</span></li>
+                    <li class="topic-item">Build Automation & Artifact Repository (Nexus, Artifactory)</li>
+                    <li class="topic-item">Testing Automation (Unit, Integration, Performance)</li>
+                    <li class="topic-item">Code Quality Tools (SonarQube, ESLint, Checkmarx)</li>
+                    <li class="topic-item">Release Management & Blue-Green Deployments</li>
+                    <li class="topic-item trending">ArgoCD & GitOps<span class="trending-badge">HOT</span></li>
+                </ul>
+            </div>
+
+            <!-- Container & Orchestration -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🐳</div>
+                    <h2 class="category-title">Containers & K8s</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Docker Deep Dive (Images, Containers, Networks, Volumes)</li>
+                    <li class="topic-item">Docker Registry & Private Registries</li>
+                    <li class="topic-item">Kubernetes Architecture (Control Plane, Nodes, Networking)</li>
+                    <li class="topic-item">K8s Core Resources (Pods, Deployments, StatefulSets, DaemonSets)</li>
+                    <li class="topic-item">Services, Ingress & Network Policies</li>
+                    <li class="topic-item">Storage & Persistent Volumes</li>
+                    <li class="topic-item">RBAC & Security Policies</li>
+                    <li class="topic-item trending">Helm Charts & Package Management<span class="trending-badge">ESSENTIAL</span></li>
+                    <li class="topic-item">Kustomize & Template Management</li>
+                </ul>
+            </div>
+
+            <!-- Cloud Platforms -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">☁️</div>
+                    <h2 class="category-title">Cloud Platforms</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">AWS (EC2, VPC, S3, IAM, RDS, Lambda, ECS/EKS)</li>
+                    <li class="topic-item">AWS CloudFormation & Terraform on AWS</li>
+                    <li class="topic-item">Azure (VMs, AKS, App Service, DevOps Services)</li>
+                    <li class="topic-item">GCP (Compute Engine, GKE, Cloud Functions, BigQuery)</li>
+                    <li class="topic-item">Multi-Cloud Strategy & Portability</li>
+                    <li class="topic-item">Cost Optimization & Reserved Instances</li>
+                    <li class="topic-item">Identity & Access Management (IAM)</li>
+                    <li class="topic-item">VPC, Networking & Load Balancing</li>
+                </ul>
+            </div>
+
+            <!-- Infrastructure as Code -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🏗️</div>
+                    <h2 class="category-title">Infrastructure as Code</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Terraform (State Management, Modules, Workspaces)</li>
+                    <li class="topic-item">Terraform Best Practices & Testing (Terratest)</li>
+                    <li class="topic-item">Ansible (Playbooks, Roles, Handlers, Jinja2)</li>
+                    <li class="topic-item">Ansible for Cloud Provisioning</li>
+                    <li class="topic-item">Puppet & Chef Basics</li>
+                    <li class="topic-item">CloudFormation & AWS CDK</li>
+                    <li class="topic-item trending">Pulumi (Infrastructure as Code with Python/Go)<span class="trending-badge">RISING</span></li>
+                    <li class="topic-item">IaC Versioning & Git Workflows</li>
+                </ul>
+            </div>
+
+            <!-- Monitoring & Observability -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">📊</div>
+                    <h2 class="category-title">Monitoring & Observability</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Prometheus (Scraping, PromQL, Alerting Rules)</li>
+                    <li class="topic-item">Grafana (Dashboards, Alerting, Data Sources)</li>
+                    <li class="topic-item">ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+                    <li class="topic-item trending">Observability vs Monitoring<span class="trending-badge">KEY</span></li>
+                    <li class="topic-item trending">OpenTelemetry & Distributed Tracing<span class="trending-badge">EMERGING</span></li>
+                    <li class="topic-item">Application Performance Monitoring (New Relic, DataDog)</li>
+                    <li class="topic-item">SLOs, SLAs, Error Budgets</li>
+                    <li class="topic-item">Log Aggregation & Analysis</li>
+                    <li class="topic-item">Alerting Strategies & On-Call Management</li>
+                </ul>
+            </div>
+
+            <!-- Security & DevSecOps -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🔐</div>
+                    <h2 class="category-title">DevSecOps & Security</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Container Security & Image Scanning (Trivy, Aqua)</li>
+                    <li class="topic-item">Secrets Management (HashiCorp Vault, AWS Secrets Manager)</li>
+                    <li class="topic-item">SAST & DAST Tools in CI/CD Pipeline</li>
+                    <li class="topic-item trending">Supply Chain Security (SBOM, Signed Artifacts)<span class="trending-badge">CRITICAL</span></li>
+                    <li class="topic-item">Network Security & Zero Trust Architecture</li>
+                    <li class="topic-item">Compliance & Governance (SOC 2, HIPAA, GDPR)</li>
+                    <li class="topic-item">SSL/TLS & Certificate Management</li>
+                    <li class="topic-item">Vulnerability Management & Patching</li>
+                </ul>
+            </div>
+
+            <!-- Version Control & Git -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">📁</div>
+                    <h2 class="category-title">Version Control</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Git Internals & Advanced Workflows</li>
+                    <li class="topic-item">Branching Strategies (GitFlow, Trunk-Based)</li>
+                    <li class="topic-item">Pull Requests & Code Review Best Practices</li>
+                    <li class="topic-item">GitHub (Actions, Packages, Enterprise)</li>
+                    <li class="topic-item">GitLab (CI/CD, Runners, Container Registry)</li>
+                    <li class="topic-item">Bitbucket & Jira Integration</li>
+                    <li class="topic-item">Git Hooks & Pre-commit Frameworks</li>
+                </ul>
+            </div>
+
+            <!-- Scripting & Programming -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <h2 class="category-title">Scripting & Programming</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Bash Scripting & Shell Programming</li>
+                    <li class="topic-item">Python for DevOps (Automation, API Integration)</li>
+                    <li class="topic-item">Go Basics (Tools Development, Microservices)</li>
+                    <li class="topic-item">YAML & Configuration Syntax</li>
+                    <li class="topic-item">JSON & XML Parsing</li>
+                    <li class="topic-item">Regular Expressions & Text Processing</li>
+                    <li class="topic-item">Error Handling & Logging in Scripts</li>
+                </ul>
+            </div>
+
+            <!-- Linux & Networking -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🐧</div>
+                    <h2 class="category-title">Linux & Networking</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">Linux Fundamentals (Permissions, File Systems, Processes)</li>
+                    <li class="topic-item">System Administration (Users, Groups, Sudo)</li>
+                    <li class="topic-item">Linux Performance Tuning & Resource Management</li>
+                    <li class="topic-item">TCP/IP Networking & OSI Model</li>
+                    <li class="topic-item">DNS, DHCP, and Routing Concepts</li>
+                    <li class="topic-item">Firewalls & iptables</li>
+                    <li class="topic-item">SSH & Public Key Infrastructure</li>
+                </ul>
+            </div>
+
+            <!-- Databases & Data -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">🗄️</div>
+                    <h2 class="category-title">Databases & Data</h2>
+                </div>
+                <ul class="topics-list">
+                    <li class="topic-item">SQL Basics (Queries, Indexing, Optimization)</li>
+                    <li class="topic-item">PostgreSQL & MySQL Administration</li>
+                    <li class="topic-item">NoSQL Databases (MongoDB, DynamoDB)</li>
+                    <li class="topic-item">Backup & Disaster Recovery Strategies</li>
+                    <li class="topic-item">Database High Availability & Replication</li>
+                    <li class="topic-item">Cache Layers (Redis, Memcached)</li>
+                    <li class="topic-item trending">Data Pipeline & Stream Processing<span class="trending-badge">EMERGING</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Trending Topics Section -->
+        <section class="trending-section">
+            <h2>🔥 Booming Topics & Future-Ready Skills</h2>
+            <div class="trending-topics">
+                <div class="trending-item">
+                    <h3>GitOps & ArgoCD</h3>
+                    <p>Declarative Infrastructure and Application deployment. Master GitOps principles, ArgoCD, and Flux for automatic syncing from Git repositories.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>Platform Engineering & Internal Developer Platforms</h3>
+                    <p>Building self-service platforms for developers. Learn about platform as a product, developer experience, and reducing cognitive load.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>eBPF & Cilium</h3>
+                    <p>Next-gen networking and security. eBPF allows low-level kernel programming for superior observability and network policies.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>Service Mesh (Istio, Linkerd)</h3>
+                    <p>Advanced traffic management, security policies, and observability for microservices. Circuit breaking, retries, rate limiting.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>AI/ML Ops (MLOps)</h3>
+                    <p>CI/CD pipelines for machine learning models. Model versioning, experiment tracking, and automated retraining pipelines.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>Kubernetes Advanced (Operators, Custom Resources)</h3>
+                    <p>CRDs, Custom Operators, and Kubernetes Automation. Extend Kubernetes for domain-specific requirements.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>Cloud-Native Storage & Data</h3>
+                    <p>Distributed databases (Cassandra, Cockroach), MinIO, and cloud-native data architectures.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>FinOps & Cost Optimization</h3>
+                    <p>Cloud cost management and optimization strategies. Reserved instances, spot instances, autoscaling, and budget alerts.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>SRE & Reliability Engineering</h3>
+                    <p>SLOs, error budgets, on-call management, and incident response automation. DevOps evolved to SRE maturity.</p>
+                </div>
+                <div class="trending-item">
+                    <h3>Serverless & FaaS</h3>
+                    <p>AWS Lambda, Azure Functions, Google Cloud Functions. Event-driven architecture and serverless best practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Matrix -->
+        <section class="skills-matrix">
+            <h2>🎯 Expected Proficiency Levels (3+ Years)</h2>
+            
+            <div class="skill-row">
+                <div class="skill-name">Container Technologies (Docker, K8s)</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">CI/CD Tools & Automation</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Infrastructure as Code (Terraform, Ansible)</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Cloud Platforms (AWS/Azure/GCP)</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Monitoring & Observability</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Linux & System Administration</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Scripting (Bash, Python, Go basics)</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">DevSecOps & Security</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">GitOps & Advanced Deployment</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-row">
+                <div class="skill-name">Architecture & System Design</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview Prep Section -->
+        <section class="interview-prep">
+            <h2>Interview Preparation Guide</h2>
+            <div class="interview-questions">
+                <div class="question-card">
+                    <h3>🔧 Technical Deep Dives</h3>
+                    <p>Be prepared to explain architecture decisions, debug production issues, discuss trade-offs between tools, and explain your most complex project end-to-end.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🚀 CI/CD Pipeline Design</h3>
+                    <p>Design complete pipelines from code push to production. Discuss stages, gates, rollback strategies, and how you handle secrets and artifacts.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>☸️ Kubernetes Scenarios</h3>
+                    <p>Troubleshoot pod failures, design highly available deployments, explain networking, security policies, and resource management.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>📈 Monitoring & Incident Response</h3>
+                    <p>Design monitoring solutions, explain alerting strategies, walk through a real incident response, discuss postmortems and remediation.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🏗️ Infrastructure Design</h3>
+                    <p>Design scalable, reliable infrastructure for various scenarios. Discuss redundancy, disaster recovery, and multi-region strategies.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🔐 Security & Compliance</h3>
+                    <p>Explain security best practices, secrets management, network policies, vulnerability scanning, and compliance requirements implementation.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>📊 Cost Optimization</h3>
+                    <p>Discuss cloud cost management, reserved instances vs on-demand, autoscaling strategies, and tools for cost monitoring and optimization.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🔄 GitOps & Infrastructure as Code</h3>
+                    <p>Explain IaC best practices, state management, testing infrastructure code, and GitOps workflows with practical examples.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🌍 Multi-Cloud & Portability</h3>
+                    <p>Discuss strategies for multi-cloud deployments, vendor lock-in mitigation, and maintaining portability across platforms.</p>
+                </div>
+
+                <div class="question-card">
+                    <h3>🚨 Troubleshooting & Debugging</h3>
+                    <p>Walk through your debugging methodology, explain common issues in containerized/cloud environments, and how you use logs and metrics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tips -->
+        <section style="margin-top: 3rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent-light);">📚 Study & Preparation Tips</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Build Real Projects</h3>
+                    <p style="color: var(--text-secondary);">Create a CI/CD pipeline with Jenkins + Docker + K8s, deploy multi-tier applications, practice IaC with Terraform, and contribute to open-source DevOps projects.</p>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Document Your Journey</h3>
+                    <p style="color: var(--text-secondary);">Maintain a blog or GitHub repo with case studies, architecture diagrams, lessons learned, and solutions to problems you've solved. Use this in interviews.</p>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Master 2-3 Tools Deeply</h3>
+                    <p style="color: var(--text-secondary);">Instead of knowing everything superficially, become an expert in Kubernetes, Terraform, and one CI/CD tool. Deep knowledge impresses interviewers more.</p>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Practice System Design</h3>
+                    <p style="color: var(--text-secondary);">Use platforms like Lucidchart to design complete systems. Practice explaining your designs, discussing trade-offs, and handling interviewer questions.</p>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Follow the Trends</h3>
+                    <p style="color: var(--text-secondary);">Subscribe to CNCF updates, read Kubernetes blog, follow DevOps engineers on Twitter/LinkedIn, and stay updated on emerging technologies and best practices.</p>
+                </div>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);">
+                    <h3 style="color: var(--accent-light); margin-bottom: 0.5rem;">Mock Interviews</h3>
+                    <p style="color: var(--text-secondary);">Practice with peers, record yourself explaining complex topics, and simulate real interview scenarios. Focus on clear communication and handling unclear requirements.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>DevOps Interview Roadmap 2024-2026 | Study Guide for 3+ Years Experience Engineers</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">This roadmap covers essential topics, trending technologies, and interview preparation strategies for mid to senior-level DevOps engineers.</p>
+    </footer>
+</body>
+</html>
