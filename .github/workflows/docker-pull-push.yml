@@ -1,1 +1,29 @@
-hh
+name: docker build & push
+
+on:
+    push:
+        branches: [main]
+
+jobs: 
+    build-and-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Log in to Docker Hub
+              uses: docker/login-action@v3
+              with:
+                username: ${{ vars.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+            - name: Build and push Docker image to dockerhub
+              uses: docker/build-push-action@v6
+              with:
+                    context: .    #it should be the root directory of the project where the Dockerfile is located
+                    push: true
+                    tags: |
+                      ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.GITHUB_HEAD_REF }}
+                      ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}
+                      ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.GITHUB_SHA }}  
+                      #Simple hashing algorithm to generate unique identifiers for each commit
