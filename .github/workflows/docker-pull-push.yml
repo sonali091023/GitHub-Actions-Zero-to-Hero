@@ -30,7 +30,7 @@ jobs:
                       #Simple hashing algorithm to generate unique identifiers for each commit
             
             - name: deploy with docker compose
-              run: docker-compose up -d --build
+              run: docker compose up -d --build
 
 
 
