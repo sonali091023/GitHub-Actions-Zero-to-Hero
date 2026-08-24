@@ -7,7 +7,7 @@ on:
 jobs: 
     build-and-push:
         env: 
-          DOCKERHUB_USER: ${{ vars.DOCKERHUB_USERNAME }}
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
@@ -26,6 +26,7 @@ jobs:
                     push: true
                     tags: |
                        ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.ref_name }}
+                       ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:latest
                        ${{ vars.DOCKERHUB_USERNAME }}/github-actions-app:${{ github.sha }}  
                       #Simple hashing algorithm to generate unique identifiers for each commit
             

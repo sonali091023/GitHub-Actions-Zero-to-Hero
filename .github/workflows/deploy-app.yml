@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     env:
-      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+      DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
       DOCKER_TAG: ${{ github.sha }}
     
     runs-on: self-hosted
