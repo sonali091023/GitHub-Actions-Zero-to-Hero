@@ -6,8 +6,8 @@ on:
 
 jobs: 
     build-and-push:
-        environment: 
-          DOCKERHUB_USER: {{ $vars.DOCKERHUB_USER }}
+        env: 
+          DOCKERHUB_USER: ${{ vars.DOCKERHUB_USERNAME }}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
