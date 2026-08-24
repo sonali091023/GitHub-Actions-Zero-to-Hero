@@ -1,2 +1,5 @@
-flask
 flake8
+flask==3.1.3
+bandit
+gunicorn
+pytest
