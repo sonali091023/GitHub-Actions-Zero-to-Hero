@@ -1,6 +1,6 @@
 name: deploy Flask app
 on: 
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   deploy:
   #env:
@@ -11,4 +11,6 @@ jobs:
         uses: actions/checkout@4
 
       - name: deploy with docker compose
-        run: docker compose down && docker-compose up -d --build --force-recreate
+        run: |
+          docker compose down
+          docker compose up -d --build --force-recreate
