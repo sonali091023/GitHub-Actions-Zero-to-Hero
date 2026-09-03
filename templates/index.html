@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Engineer Interview Roadmap - Interactive</title>
+    <title>EcoMart - Premium E-Commerce Platform</title>
     <style>
         * {
             margin: 0;
@@ -11,1427 +11,598 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #3b82f6;
-            --accent-light: #60a5fa;
-            --trending: #f59e0b;
-            --success: #10b981;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --border: #334155;
-            --bg-card: #1a1f35;
-        }
-
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--primary) 0%, #1a2942 100%);
-            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
+            color: #333;
         }
 
+        /* Header & Navigation */
         header {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            sticky: top;
         }
 
-        .header-flex {
-            max-width: 1400px;
-            margin: 0 auto;
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
             gap: 2rem;
         }
 
-        .header-content h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
         }
 
-        .header-content p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+        .nav-links a:hover {
+            opacity: 0.8;
         }
 
-        .header-controls {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .progress-badge {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid var(--accent);
-            color: var(--accent-light);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .btn {
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
+        .cart-icon {
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-light);
+        .cta-button:hover {
+            background-color: #ff5252;
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--accent-light);
-            border: 1px solid var(--accent);
+        .cta-button-white {
+            background-color: white;
+            color: #667eea;
+            margin-left: 1rem;
         }
 
-        .btn-secondary:hover {
-            background: rgba(59, 130, 246, 0.3);
+        .cta-button-white:hover {
+            background-color: #f0f0f0;
         }
 
-        .container {
-            max-width: 1400px;
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            background: #f8f9fa;
         }
 
-        .view {
-            display: none;
-        }
-
-        .view.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .category-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .category-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
-        }
-
-        .category-card:hover::before {
-            opacity: 1;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .category-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .category-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .category-progress {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-
-        .topics-list {
-            list-style: none;
-        }
-
-        .topic-item {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            border-bottom: 1px solid rgba(52, 65, 84, 0.5);
-            position: relative;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .topic-item:last-child {
-            border-bottom: none;
-        }
-
-        .topic-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--accent);
-            border-radius: 3px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .topic-item input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            width: 16px;
-            height: 16px;
-            left: 0;
-            margin: 0;
-        }
-
-        .topic-item input[type="checkbox"]:checked::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-weight: bold;
-            font-size: 0.8rem;
+        .feature-card {
             text-align: center;
-            width: 16px;
-            height: 16px;
-            background: var(--success);
-            border: 2px solid var(--success);
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-
-        .topic-item input[type="checkbox"]:checked + .topic-content {
-            color: var(--success);
-            text-decoration: line-through;
-            opacity: 0.7;
-        }
-
-        .topic-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            flex: 1;
-        }
-
-        .topic-text {
-            flex: 1;
-        }
-
-        .topic-item.trending .topic-text {
-            color: var(--trending);
-            font-weight: 500;
-        }
-
-        .topic-item.trending {
-            background: rgba(245, 158, 11, 0.05);
-            margin: 0.5rem -1.5rem;
-            padding-left: 1.5rem;
-            padding-right: 1rem;
-            border-left: 2px solid var(--trending);
-        }
-
-        .trending-badge {
-            display: inline-block;
-            background: var(--trending);
-            color: var(--primary);
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            white-space: nowrap;
-            margin-left: 0.5rem;
-        }
-
-        .btn-learn-more {
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--accent-light);
-            border: 1px solid var(--accent);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .btn-learn-more:hover {
-            background: rgba(59, 130, 246, 0.3);
-            transform: scale(1.05);
-        }
-
-        /* Detail View Styles */
-        .detail-header {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
 
-        .detail-header-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            flex-shrink: 0;
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
 
-        .detail-header-content h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .detail-header-content p {
-            color: var(--text-secondary);
-        }
-
-        .detail-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .detail-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-
-        .detail-section h2 {
-            font-size: 1.3rem;
+        .feature-icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--accent-light);
         }
 
-        .detail-section ul {
-            list-style: none;
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: #667eea;
         }
 
-        .detail-section li {
-            padding: 0.6rem 0;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-            position: relative;
+        /* Products Section */
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .detail-section li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
         }
 
-        .back-btn {
-            margin-bottom: 2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-light);
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid var(--accent);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: rgba(59, 130, 246, 0.2);
-        }
-
-        .trending-section {
-            margin-top: 3rem;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .trending-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--trending);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .trending-topics {
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .trending-item {
-            background: var(--bg-card);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 8px;
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .product-info {
             padding: 1.5rem;
         }
 
-        .trending-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--trending);
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
 
-        .trending-item p {
+        .product-description {
+            color: #666;
             font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
-        .interview-prep {
-            margin-top: 3rem;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .interview-prep h2 {
+        .product-price {
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--success);
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
 
-        .interview-questions {
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #764ba2;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .question-card {
-            background: var(--bg-card);
-            border-left: 3px solid var(--success);
-            padding: 1.5rem;
-            border-radius: 4px;
-        }
-
-        .question-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .question-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        footer {
-            background: var(--secondary);
-            border-top: 1px solid var(--border);
+        .testimonial-card {
+            background: white;
             padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 3rem;
         }
 
-        @media (max-width: 1024px) {
-            .detail-content {
-                grid-template-columns: 1fr;
-            }
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 2rem;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #ff5252;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ddd;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-flex {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-button-white {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .newsletter-form {
                 flex-direction: column;
-                align-items: flex-start;
             }
 
-            .header-controls {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .header-content h1 {
-                font-size: 1.5rem;
-            }
-
-            .roadmap-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .topic-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .topic-content {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .btn-learn-more {
-                width: 100%;
-                text-align: center;
-            }
-
-            .detail-header {
-                flex-direction: column;
-                text-align: center;
+            nav {
+                padding: 1rem;
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                transition: none !important;
-                animation: none !important;
-            }
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <header>
-        <div class="header-flex">
-            <div class="header-content">
-                <h1>DevOps Interview Roadmap Expert</h1>
-                <p>3+ Years Experience Study Guide</p>
-            </div>
-            <div class="header-controls">
-                <div class="progress-badge">
-                    <span id="progress-text">Progress: 0%</span>
-                </div>
-                <button class="btn btn-secondary" onclick="app.resetProgress()">Reset</button>
-            </div>
-        </div>
+        <nav>
+            <a href="#" class="logo">🛍️ EcoMart</a>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#newsletter">Subscribe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon">🛒</div>
+        </nav>
     </header>
 
-    <!-- Main View -->
-    <div id="mainView" class="view active">
-        <div class="container">
-            <div class="roadmap-grid" id="roadmapGrid"></div>
-            <div class="trending-section" id="trendingSection"></div>
-            <div class="interview-prep" id="interviewSection"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to EcoMart</h1>
+            <p>Discover premium products delivered fast with exceptional quality and service</p>
+            <button class="cta-button">Shop Now</button>
+            <a href="#" class="cta-button cta-button-white">Learn More</a>
+            <div class="status-badge">✓ System Status: UP</div>
         </div>
-    </div>
+    </section>
 
-    <!-- Detail View -->
-    <div id="detailView" class="view">
-        <div class="container">
-            <button class="back-btn" onclick="app.backToMain()">← Back to Roadmap</button>
-            <div id="detailContent"></div>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Shipping</h3>
+            <p>Get your products delivered within 2-3 business days worldwide</p>
         </div>
-    </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Secure Payment</h3>
+            <p>100% secure checkout with encrypted payment processing</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">↩️</div>
+            <h3>Easy Returns</h3>
+            <p>30-day money-back guarantee on all products</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>24/7 Support</h3>
+            <p>Our dedicated team is always ready to help you</p>
+        </div>
+    </section>
 
-    <footer>
-        <p>DevOps Interview Roadmap 2024-2026 | Study Guide for 3+ Years Experience Engineers</p>
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <div class="product-info">
+                    <h3>Wireless Earbuds</h3>
+                    <p class="product-description">Premium sound quality with active noise cancellation</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (324 reviews)</div>
+                    <div class="product-price">$79.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <div class="product-info">
+                    <h3>Smart Watch</h3>
+                    <p class="product-description">Track fitness and stay connected all day long</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (512 reviews)</div>
+                    <div class="product-price">$199.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💻</div>
+                <div class="product-info">
+                    <h3>USB-C Hub</h3>
+                    <p class="product-description">7-in-1 multiport adapter for maximum connectivity</p>
+                    <div class="product-rating">⭐⭐⭐⭐ (289 reviews)</div>
+                    <div class="product-price">$49.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <div class="product-info">
+                    <h3>Over-Ear Headphones</h3>
+                    <p class="product-description">Studio-grade sound for professionals and audiophiles</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (418 reviews)</div>
+                    <div class="product-price">$299.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🔌</div>
+                <div class="product-info">
+                    <h3>Fast Charger</h3>
+                    <p class="product-description">65W GaN charger with multiple device support</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (356 reviews)</div>
+                    <div class="product-price">$59.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💎</div>
+                <div class="product-info">
+                    <h3>Premium Cable</h3>
+                    <p class="product-description">Durable braided cable with lifetime warranty</p>
+                    <div class="product-rating">⭐⭐⭐⭐⭐ (267 reviews)</div>
+                    <div class="product-price">$29.99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Outstanding quality and super fast delivery! I'll definitely order again."</p>
+                <p class="testimonial-author">— Sarah Johnson</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best customer service I've experienced. They went above and beyond!"</p>
+                <p class="testimonial-author">— Michael Chen</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The products are exactly as described. Highly recommended for everyone!"</p>
+                <p class="testimonial-author">— Emma Williams</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive deals, new product launches, and special promotions delivered to your inbox</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About EcoMart</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EcoMart. All rights reserved. | Status: <span style="color: #28a745;">✓ Operational</span></p>
+        </div>
     </footer>
-
-    <script>
-        const app = {
-            data: {
-                categories: [
-                    {
-                        id: 'core-devops',
-                        name: 'Core DevOps Principles',
-                        icon: '📋',
-                        description: 'Fundamental concepts and philosophy of DevOps',
-                        topics: [
-                            { name: 'DevOps Culture & Mindset', trending: false },
-                            { name: 'CALMS Framework (Culture, Automation, Lean, Measurement, Sharing)', trending: false },
-                            { name: 'SDLC & Agile Integration', trending: false },
-                            { name: 'Infrastructure as Code (IaC)', trending: false },
-                            { name: 'Configuration Management', trending: false },
-                            { name: 'Continuous Integration & Deployment', trending: false },
-                            { name: 'Feedback Loops & Metrics', trending: false }
-                        ],
-                        details: {
-                            overview: 'Understanding DevOps culture, principles, and how they transform software delivery.',
-                            keyTopics: [
-                                'DevOps philosophy and cultural transformation',
-                                'Collaboration between Development and Operations',
-                                'Automation as core principle',
-                                'Continuous improvement mindset',
-                                'Shared responsibility and ownership'
-                            ],
-                            skills: [
-                                'Understanding organizational change management',
-                                'Implementing automation strategies',
-                                'Establishing feedback mechanisms',
-                                'Defining SLOs and SLAs',
-                                'Building cross-functional teams'
-                            ],
-                            resources: [
-                                'The Phoenix Project (Gene Kim)',
-                                'The DevOps Handbook',
-                                'CALMS Framework documentation',
-                                'Google Cloud DevOps Research'
-                            ],
-                            interviewTips: [
-                                'Explain your own DevOps transformation experience',
-                                'Discuss how automation benefits teams',
-                                'Share examples of feedback loops you\'ve implemented',
-                                'Talk about breaking silos between teams',
-                                'Discuss metrics that matter to your organization'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'cicd',
-                        name: 'CI/CD & Automation',
-                        icon: '⚙️',
-                        description: 'Continuous Integration and Deployment pipeline tools and practices',
-                        topics: [
-                            { name: 'Jenkins (Pipelines, Groovy, Declarative)', trending: false },
-                            { name: 'GitHub Actions', trending: true },
-                            { name: 'GitLab CI/CD', trending: true },
-                            { name: 'Build Automation & Artifact Repository (Nexus, Artifactory)', trending: false },
-                            { name: 'Testing Automation (Unit, Integration, Performance)', trending: false },
-                            { name: 'Code Quality Tools (SonarQube, ESLint, Checkmarx)', trending: false },
-                            { name: 'Release Management & Blue-Green Deployments', trending: false },
-                            { name: 'ArgoCD & GitOps', trending: true }
-                        ],
-                        details: {
-                            overview: 'Master CI/CD tools and create robust automated pipelines for continuous deployment.',
-                            keyTopics: [
-                                'Jenkins pipeline architecture (Declarative vs Scripted)',
-                                'GitHub Actions workflows and runners',
-                                'GitLab CI/CD with runners and containers',
-                                'Artifact management and versioning',
-                                'Test automation in pipelines',
-                                'Code quality gates and SonarQube',
-                                'Blue-Green and Canary deployments'
-                            ],
-                            skills: [
-                                'Writing complex CI/CD pipelines',
-                                'Setting up automated testing',
-                                'Implementing security scanning',
-                                'Managing build artifacts',
-                                'Configuring deployment strategies',
-                                'Troubleshooting pipeline failures',
-                                'Optimizing build times'
-                            ],
-                            resources: [
-                                'Jenkins Documentation and Best Practices',
-                                'GitHub Actions Documentation',
-                                'GitLab CI/CD Guides',
-                                'ArgoCD Official Guide',
-                                'GitOps by Example'
-                            ],
-                            interviewTips: [
-                                'Design a complete CI/CD pipeline from scratch',
-                                'Explain how to handle secrets securely',
-                                'Discuss parallel builds and optimization',
-                                'Talk about failure handling and retries',
-                                'Explain integration with Kubernetes deployment'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'containers',
-                        name: 'Containers & Kubernetes',
-                        icon: '🐳',
-                        description: 'Docker containerization and Kubernetes orchestration',
-                        topics: [
-                            { name: 'Docker Deep Dive (Images, Containers, Networks, Volumes)', trending: false },
-                            { name: 'Docker Registry & Private Registries', trending: false },
-                            { name: 'Kubernetes Architecture (Control Plane, Nodes, Networking)', trending: false },
-                            { name: 'K8s Core Resources (Pods, Deployments, StatefulSets, DaemonSets)', trending: false },
-                            { name: 'Services, Ingress & Network Policies', trending: false },
-                            { name: 'Storage & Persistent Volumes', trending: false },
-                            { name: 'RBAC & Security Policies', trending: false },
-                            { name: 'Helm Charts & Package Management', trending: true },
-                            { name: 'Kustomize & Template Management', trending: false }
-                        ],
-                        details: {
-                            overview: 'Deep dive into containerization with Docker and orchestration with Kubernetes.',
-                            keyTopics: [
-                                'Docker image layers and multi-stage builds',
-                                'Docker networking and storage drivers',
-                                'Kubernetes cluster components and architecture',
-                                'Pod lifecycle and container networking',
-                                'Deployment strategies and scaling',
-                                'StatefulSets for stateful applications',
-                                'Ingress controllers and network policies',
-                                'Persistent storage management',
-                                'Helm templating and package management'
-                            ],
-                            skills: [
-                                'Writing optimized Dockerfiles',
-                                'Managing container registries',
-                                'Designing Kubernetes deployments',
-                                'Configuring networking and storage',
-                                'Implementing RBAC policies',
-                                'Writing Helm charts',
-                                'Troubleshooting pod issues',
-                                'Scaling applications'
-                            ],
-                            resources: [
-                                'Docker Official Documentation',
-                                'Kubernetes Documentation (kubernetes.io)',
-                                'Helm Documentation',
-                                'Kubernetes in Action (Book)',
-                                'CNCF Kubernetes Certification Prep'
-                            ],
-                            interviewTips: [
-                                'Troubleshoot a failing pod',
-                                'Design a highly available Kubernetes cluster',
-                                'Explain resource requests and limits',
-                                'Discuss container networking models',
-                                'Write Helm charts for complex applications',
-                                'Explain StatefulSets vs Deployments'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'cloud',
-                        name: 'Cloud Platforms',
-                        icon: '☁️',
-                        description: 'AWS, Azure, and GCP cloud services and architecture',
-                        topics: [
-                            { name: 'AWS (EC2, VPC, S3, IAM, RDS, Lambda, ECS/EKS)', trending: false },
-                            { name: 'AWS CloudFormation & Terraform on AWS', trending: false },
-                            { name: 'Azure (VMs, AKS, App Service, DevOps Services)', trending: false },
-                            { name: 'GCP (Compute Engine, GKE, Cloud Functions, BigQuery)', trending: false },
-                            { name: 'Multi-Cloud Strategy & Portability', trending: false },
-                            { name: 'Cost Optimization & Reserved Instances', trending: false },
-                            { name: 'Identity & Access Management (IAM)', trending: false },
-                            { name: 'VPC, Networking & Load Balancing', trending: false }
-                        ],
-                        details: {
-                            overview: 'Master major cloud platforms and their DevOps services.',
-                            keyTopics: [
-                                'AWS core services (EC2, RDS, S3, Lambda, ECS/EKS)',
-                                'AWS networking (VPC, Security Groups, NACLs)',
-                                'IAM policies and roles',
-                                'CloudFormation and Infrastructure as Code',
-                                'Azure App Service, AKS, and DevOps',
-                                'GCP Compute Engine and GKE',
-                                'Cloud-native storage solutions',
-                                'Multi-cloud deployment strategies'
-                            ],
-                            skills: [
-                                'Provisioning cloud infrastructure',
-                                'Configuring networking and security',
-                                'Managing identities and permissions',
-                                'Setting up high availability',
-                                'Cost optimization strategies',
-                                'Disaster recovery planning',
-                                'Multi-region deployments'
-                            ],
-                            resources: [
-                                'AWS Official Documentation',
-                                'Azure Documentation',
-                                'GCP Documentation',
-                                'Cloud Architecture Best Practices',
-                                'Cloud Certification Guides'
-                            ],
-                            interviewTips: [
-                                'Design a multi-region architecture',
-                                'Explain cost optimization strategies',
-                                'Discuss security group configurations',
-                                'Talk about VPC design patterns',
-                                'Explain IAM policy creation',
-                                'Compare cloud services across providers'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'iac',
-                        name: 'Infrastructure as Code',
-                        icon: '🏗️',
-                        description: 'Terraform, Ansible, and other IaC tools',
-                        topics: [
-                            { name: 'Terraform (State Management, Modules, Workspaces)', trending: false },
-                            { name: 'Terraform Best Practices & Testing (Terratest)', trending: false },
-                            { name: 'Ansible (Playbooks, Roles, Handlers, Jinja2)', trending: false },
-                            { name: 'Ansible for Cloud Provisioning', trending: false },
-                            { name: 'Puppet & Chef Basics', trending: false },
-                            { name: 'CloudFormation & AWS CDK', trending: false },
-                            { name: 'Pulumi (Infrastructure as Code with Python/Go)', trending: true },
-                            { name: 'IaC Versioning & Git Workflows', trending: false }
-                        ],
-                        details: {
-                            overview: 'Master Infrastructure as Code tools for managing infrastructure at scale.',
-                            keyTopics: [
-                                'Terraform state management and backends',
-                                'Module design and composition',
-                                'Variable and output management',
-                                'Terraform workspaces and environments',
-                                'Ansible playbooks and roles',
-                                'Jinja2 templating in Ansible',
-                                'Idempotency in configuration management',
-                                'Testing infrastructure code'
-                            ],
-                            skills: [
-                                'Writing reusable Terraform modules',
-                                'Managing state in teams',
-                                'Creating Ansible playbooks',
-                                'Implementing drift detection',
-                                'Version controlling infrastructure',
-                                'Testing infrastructure changes',
-                                'Documenting infrastructure code'
-                            ],
-                            resources: [
-                                'Terraform Official Documentation',
-                                'Terraform Best Practices',
-                                'Ansible Documentation',
-                                'Terraform Registry for modules',
-                                'Infrastructure as Code best practices'
-                            ],
-                            interviewTips: [
-                                'Design reusable Terraform modules',
-                                'Explain state management challenges',
-                                'Discuss variable precedence in Terraform',
-                                'Write Ansible playbooks from scratch',
-                                'Explain how to handle secrets in IaC',
-                                'Discuss testing strategies for infrastructure'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'monitoring',
-                        name: 'Monitoring & Observability',
-                        icon: '📊',
-                        description: 'Prometheus, Grafana, ELK, and observability tools',
-                        topics: [
-                            { name: 'Prometheus (Scraping, PromQL, Alerting Rules)', trending: false },
-                            { name: 'Grafana (Dashboards, Alerting, Data Sources)', trending: false },
-                            { name: 'ELK Stack (Elasticsearch, Logstash, Kibana)', trending: false },
-                            { name: 'Observability vs Monitoring', trending: true },
-                            { name: 'OpenTelemetry & Distributed Tracing', trending: true },
-                            { name: 'Application Performance Monitoring (New Relic, DataDog)', trending: false },
-                            { name: 'SLOs, SLAs, Error Budgets', trending: false },
-                            { name: 'Log Aggregation & Analysis', trending: false },
-                            { name: 'Alerting Strategies & On-Call Management', trending: false }
-                        ],
-                        details: {
-                            overview: 'Master monitoring and observability for production systems.',
-                            keyTopics: [
-                                'Prometheus architecture and data model',
-                                'PromQL queries and aggregation',
-                                'Alerting rules and alert management',
-                                'Grafana dashboard design',
-                                'Log aggregation with ELK',
-                                'Observability pillars (metrics, logs, traces)',
-                                'OpenTelemetry instrumentation',
-                                'SLOs and error budgets',
-                                'Alert fatigue and tuning'
-                            ],
-                            skills: [
-                                'Writing PromQL queries',
-                                'Creating meaningful dashboards',
-                                'Setting up alerting rules',
-                                'Log aggregation and parsing',
-                                'Distributed tracing setup',
-                                'Identifying performance bottlenecks',
-                                'Incident response automation'
-                            ],
-                            resources: [
-                                'Prometheus Documentation',
-                                'Grafana Dashboard Guides',
-                                'ELK Stack Documentation',
-                                'Google SRE Book (SLOs section)',
-                                'OpenTelemetry Documentation'
-                            ],
-                            interviewTips: [
-                                'Design a monitoring strategy',
-                                'Explain SLO vs SLA vs SLI',
-                                'Write PromQL queries',
-                                'Design Grafana dashboards',
-                                'Discuss alert tuning strategies',
-                                'Explain distributed tracing benefits'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'devsecops',
-                        name: 'DevSecOps & Security',
-                        icon: '🔐',
-                        description: 'Security practices in DevOps and CI/CD pipeline',
-                        topics: [
-                            { name: 'Container Security & Image Scanning (Trivy, Aqua)', trending: false },
-                            { name: 'Secrets Management (HashiCorp Vault, AWS Secrets Manager)', trending: false },
-                            { name: 'SAST & DAST Tools in CI/CD Pipeline', trending: false },
-                            { name: 'Supply Chain Security (SBOM, Signed Artifacts)', trending: true },
-                            { name: 'Network Security & Zero Trust Architecture', trending: false },
-                            { name: 'Compliance & Governance (SOC 2, HIPAA, GDPR)', trending: false },
-                            { name: 'SSL/TLS & Certificate Management', trending: false },
-                            { name: 'Vulnerability Management & Patching', trending: false }
-                        ],
-                        details: {
-                            overview: 'Integrate security throughout the DevOps pipeline.',
-                            keyTopics: [
-                                'Container image scanning and vulnerability detection',
-                                'Secrets management and rotation',
-                                'SAST (Static Application Security Testing)',
-                                'DAST (Dynamic Application Security Testing)',
-                                'Supply chain security and SBOM',
-                                'Zero Trust Architecture',
-                                'Compliance automation',
-                                'Certificate management',
-                                'Vulnerability management'
-                            ],
-                            skills: [
-                                'Implementing container security scanning',
-                                'Setting up secrets management',
-                                'Integrating security tools in CI/CD',
-                                'Writing security policies',
-                                'Implementing compliance checks',
-                                'Managing SSL certificates',
-                                'Incident response procedures'
-                            ],
-                            resources: [
-                                'OWASP DevSecOps Cheat Sheet',
-                                'HashiCorp Vault Documentation',
-                                'Container Security Best Practices',
-                                'CISA Security Guidelines',
-                                'Zero Trust Architecture Guide'
-                            ],
-                            interviewTips: [
-                                'Explain security scanning in pipelines',
-                                'Discuss secrets management approaches',
-                                'Explain SAST vs DAST tools',
-                                'Talk about compliance automation',
-                                'Discuss supply chain security',
-                                'Explain zero trust implementation'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'vcs',
-                        name: 'Version Control',
-                        icon: '📁',
-                        description: 'Git, GitHub, GitLab, and version control workflows',
-                        topics: [
-                            { name: 'Git Internals & Advanced Workflows', trending: false },
-                            { name: 'Branching Strategies (GitFlow, Trunk-Based)', trending: false },
-                            { name: 'Pull Requests & Code Review Best Practices', trending: false },
-                            { name: 'GitHub (Actions, Packages, Enterprise)', trending: false },
-                            { name: 'GitLab (CI/CD, Runners, Container Registry)', trending: false },
-                            { name: 'Bitbucket & Jira Integration', trending: false },
-                            { name: 'Git Hooks & Pre-commit Frameworks', trending: false }
-                        ],
-                        details: {
-                            overview: 'Master version control systems and collaborative workflows.',
-                            keyTopics: [
-                                'Git internals and object model',
-                                'Advanced Git workflows (rebase, cherry-pick)',
-                                'Branching strategies (GitFlow, GitHub Flow, Trunk-Based)',
-                                'Pull request workflows',
-                                'Code review best practices',
-                                'GitHub Actions and workflows',
-                                'GitLab CI/CD integration',
-                                'Pre-commit hooks and automation'
-                            ],
-                            skills: [
-                                'Writing effective commit messages',
-                                'Resolving merge conflicts',
-                                'Implementing branching strategies',
-                                'Code review processes',
-                                'Automating with Git hooks',
-                                'Managing access and permissions'
-                            ],
-                            resources: [
-                                'Pro Git Book',
-                                'GitHub Documentation',
-                                'GitLab Documentation',
-                                'Git Best Practices Guides',
-                                'Branching Strategies Comparison'
-                            ],
-                            interviewTips: [
-                                'Explain branching strategy choices',
-                                'Discuss code review process',
-                                'Explain Git workflow for teams',
-                                'Talk about handling large repositories',
-                                'Discuss trunk-based development',
-                                'Explain pre-commit hooks implementation'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'scripting',
-                        name: 'Scripting & Programming',
-                        icon: '💻',
-                        description: 'Bash, Python, Go for DevOps automation',
-                        topics: [
-                            { name: 'Bash Scripting & Shell Programming', trending: false },
-                            { name: 'Python for DevOps (Automation, API Integration)', trending: false },
-                            { name: 'Go Basics (Tools Development, Microservices)', trending: false },
-                            { name: 'YAML & Configuration Syntax', trending: false },
-                            { name: 'JSON & XML Parsing', trending: false },
-                            { name: 'Regular Expressions & Text Processing', trending: false },
-                            { name: 'Error Handling & Logging in Scripts', trending: false }
-                        ],
-                        details: {
-                            overview: 'Write scripts and tools to automate DevOps tasks.',
-                            keyTopics: [
-                                'Bash scripting fundamentals',
-                                'Shell functions and error handling',
-                                'Python libraries for DevOps (Fabric, Paramiko)',
-                                'API automation with Python',
-                                'Go language basics for DevOps tools',
-                                'YAML parsing and validation',
-                                'JSON manipulation',
-                                'Regular expressions',
-                                'Logging and error handling'
-                            ],
-                            skills: [
-                                'Writing robust bash scripts',
-                                'Python automation scripts',
-                                'Error handling and retries',
-                                'API integration',
-                                'Log parsing and analysis',
-                                'Building command-line tools',
-                                'Testing scripts'
-                            ],
-                            resources: [
-                                'Bash Guide for Beginners',
-                                'Python for DevOps (Book)',
-                                'Go Language Tour',
-                                'Shell Scripting Best Practices',
-                                'Regular Expression Guides'
-                            ],
-                            interviewTips: [
-                                'Write a bash script on the spot',
-                                'Explain error handling in scripts',
-                                'Discuss Python vs Bash trade-offs',
-                                'Talk about API integration',
-                                'Explain logging best practices',
-                                'Discuss testing scripts'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'linux',
-                        name: 'Linux & Networking',
-                        icon: '🐧',
-                        description: 'Linux administration and networking fundamentals',
-                        topics: [
-                            { name: 'Linux Fundamentals (Permissions, File Systems, Processes)', trending: false },
-                            { name: 'System Administration (Users, Groups, Sudo)', trending: false },
-                            { name: 'Linux Performance Tuning & Resource Management', trending: false },
-                            { name: 'TCP/IP Networking & OSI Model', trending: false },
-                            { name: 'DNS, DHCP, and Routing Concepts', trending: false },
-                            { name: 'Firewalls & iptables', trending: false },
-                            { name: 'SSH & Public Key Infrastructure', trending: false }
-                        ],
-                        details: {
-                            overview: 'Deep understanding of Linux and network fundamentals.',
-                            keyTopics: [
-                                'Linux file systems and permissions',
-                                'Process management and signals',
-                                'Package management',
-                                'User and group administration',
-                                'System service management',
-                                'Network interfaces and routing',
-                                'DNS resolution',
-                                'Firewall configuration',
-                                'SSH key management'
-                            ],
-                            skills: [
-                                'System administration tasks',
-                                'Performance troubleshooting',
-                                'Network configuration',
-                                'Security configuration',
-                                'Resource management',
-                                'Log analysis',
-                                'Automation scripts'
-                            ],
-                            resources: [
-                                'Linux Administrator Guide',
-                                'TCP/IP Illustrated',
-                                'Linux Performance Tuning',
-                                'Linux System Administration Handbook',
-                                'Network Administration Documentation'
-                            ],
-                            interviewTips: [
-                                'Explain Linux permissions model',
-                                'Discuss performance tuning',
-                                'Explain network protocols',
-                                'Talk about DNS resolution',
-                                'Discuss firewall configuration',
-                                'Explain SSH key management'
-                            ]
-                        }
-                    },
-                    {
-                        id: 'databases',
-                        name: 'Databases & Data',
-                        icon: '🗄️',
-                        description: 'SQL, NoSQL, and data management in DevOps',
-                        topics: [
-                            { name: 'SQL Basics (Queries, Indexing, Optimization)', trending: false },
-                            { name: 'PostgreSQL & MySQL Administration', trending: false },
-                            { name: 'NoSQL Databases (MongoDB, DynamoDB)', trending: false },
-                            { name: 'Backup & Disaster Recovery Strategies', trending: false },
-                            { name: 'Database High Availability & Replication', trending: false },
-                            { name: 'Cache Layers (Redis, Memcached)', trending: false },
-                            { name: 'Data Pipeline & Stream Processing', trending: true }
-                        ],
-                        details: {
-                            overview: 'Database administration and data management for DevOps.',
-                            keyTopics: [
-                                'SQL query optimization',
-                                'Database indexing strategies',
-                                'PostgreSQL and MySQL administration',
-                                'Replication and high availability',
-                                'NoSQL databases and trade-offs',
-                                'Backup and recovery strategies',
-                                'Disaster recovery planning',
-                                'Database performance tuning',
-                                'Caching strategies'
-                            ],
-                            skills: [
-                                'Database administration',
-                                'Query optimization',
-                                'Backup automation',
-                                'High availability setup',
-                                'Performance monitoring',
-                                'Disaster recovery planning',
-                                'Data migration'
-                            ],
-                            resources: [
-                                'PostgreSQL Official Documentation',
-                                'MySQL Documentation',
-                                'Database Administration Guide',
-                                'High Availability Patterns',
-                                'Disaster Recovery Best Practices'
-                            ],
-                            interviewTips: [
-                                'Explain database replication',
-                                'Discuss backup strategies',
-                                'Explain indexing strategy',
-                                'Talk about disaster recovery',
-                                'Discuss NoSQL vs SQL trade-offs',
-                                'Explain caching strategies'
-                            ]
-                        }
-                    }
-                ],
-                trendingTopics: [
-                    { name: 'GitOps & ArgoCD', desc: 'Declarative Infrastructure and Application deployment. Master GitOps principles, ArgoCD, and Flux for automatic syncing from Git repositories.' },
-                    { name: 'Platform Engineering & Internal Developer Platforms', desc: 'Building self-service platforms for developers. Learn about platform as a product, developer experience, and reducing cognitive load.' },
-                    { name: 'eBPF & Cilium', desc: 'Next-gen networking and security. eBPF allows low-level kernel programming for superior observability and network policies.' },
-                    { name: 'Service Mesh (Istio, Linkerd)', desc: 'Advanced traffic management, security policies, and observability for microservices. Circuit breaking, retries, rate limiting.' },
-                    { name: 'AI/ML Ops (MLOps)', desc: 'CI/CD pipelines for machine learning models. Model versioning, experiment tracking, and automated retraining pipelines.' },
-                    { name: 'Kubernetes Advanced (Operators, Custom Resources)', desc: 'CRDs, Custom Operators, and Kubernetes Automation. Extend Kubernetes for domain-specific requirements.' },
-                    { name: 'Cloud-Native Storage & Data', desc: 'Distributed databases (Cassandra, Cockroach), MinIO, and cloud-native data architectures.' },
-                    { name: 'FinOps & Cost Optimization', desc: 'Cloud cost management and optimization strategies. Reserved instances, spot instances, autoscaling, and budget alerts.' },
-                    { name: 'SRE & Reliability Engineering', desc: 'SLOs, error budgets, on-call management, and incident response automation. DevOps evolved to SRE maturity.' },
-                    { name: 'Serverless & FaaS', desc: 'AWS Lambda, Azure Functions, Google Cloud Functions. Event-driven architecture and serverless best practices.' }
-                ],
-                interviewQuestions: [
-                    { title: '🔧 Technical Deep Dives', desc: 'Be prepared to explain architecture decisions, debug production issues, discuss trade-offs between tools, and explain your most complex project end-to-end.' },
-                    { title: '🚀 CI/CD Pipeline Design', desc: 'Design complete pipelines from code push to production. Discuss stages, gates, rollback strategies, and how you handle secrets and artifacts.' },
-                    { title: '☸️ Kubernetes Scenarios', desc: 'Troubleshoot pod failures, design highly available deployments, explain networking, security policies, and resource management.' },
-                    { title: '📈 Monitoring & Incident Response', desc: 'Design monitoring solutions, explain alerting strategies, walk through a real incident response, discuss postmortems and remediation.' },
-                    { title: '🏗️ Infrastructure Design', desc: 'Design scalable, reliable infrastructure for various scenarios. Discuss redundancy, disaster recovery, and multi-region strategies.' },
-                    { title: '🔐 Security & Compliance', desc: 'Explain security best practices, secrets management, network policies, vulnerability scanning, and compliance requirements implementation.' },
-                    { title: '📊 Cost Optimization', desc: 'Discuss cloud cost management, reserved instances vs on-demand, autoscaling strategies, and tools for cost monitoring and optimization.' },
-                    { title: '🔄 GitOps & Infrastructure as Code', desc: 'Explain IaC best practices, state management, testing infrastructure code, and GitOps workflows with practical examples.' },
-                    { title: '🌍 Multi-Cloud & Portability', desc: 'Discuss strategies for multi-cloud deployments, vendor lock-in mitigation, and maintaining portability across platforms.' },
-                    { title: '🚨 Troubleshooting & Debugging', desc: 'Walk through your debugging methodology, explain common issues in containerized/cloud environments, and how you use logs and metrics.' }
-                ]
-            },
-
-            init() {
-                this.loadProgress();
-                this.renderMain();
-            },
-
-            loadProgress() {
-                const saved = localStorage.getItem('devops-roadmap-progress');
-                if (saved) {
-                    this.checkedItems = JSON.parse(saved);
-                } else {
-                    this.checkedItems = new Set();
-                }
-            },
-
-            saveProgress() {
-                localStorage.setItem('devops-roadmap-progress', JSON.stringify(Array.from(this.checkedItems)));
-                this.updateProgress();
-            },
-
-            updateProgress() {
-                const totalTopics = this.data.categories.reduce((sum, cat) => sum + cat.topics.length, 0);
-                const percentage = Math.round((this.checkedItems.size / totalTopics) * 100);
-                document.getElementById('progress-text').textContent = `Progress: ${percentage}%`;
-            },
-
-            renderMain() {
-                this.renderCategories();
-                this.renderTrending();
-                this.renderInterview();
-                this.updateProgress();
-            },
-
-            renderCategories() {
-                const grid = document.getElementById('roadmapGrid');
-                grid.innerHTML = this.data.categories.map(cat => `
-                    <div class="category-card">
-                        <div class="category-header">
-                            <div class="category-icon">${cat.icon}</div>
-                            <div>
-                                <h2 class="category-title">${cat.name}</h2>
-                                <div class="category-progress" id="progress-${cat.id}"></div>
-                            </div>
-                        </div>
-                        <ul class="topics-list">
-                            ${cat.topics.map((topic, idx) => `
-                                <li class="topic-item ${topic.trending ? 'trending' : ''}">
-                                    <input type="checkbox" 
-                                        id="${cat.id}-${idx}" 
-                                        ${this.checkedItems.has(`${cat.id}-${idx}`) ? 'checked' : ''}
-                                        onchange="app.toggleTopic('${cat.id}-${idx}')">
-                                    <div class="topic-content">
-                                        <div class="topic-text">
-                                            ${topic.name}
-                                            ${topic.trending ? '<span class="trending-badge">TRENDING</span>' : ''}
-                                        </div>
-                                        <button class="btn-learn-more" onclick="app.showDetail('${cat.id}')">
-                                            Learn More →
-                                        </button>
-                                    </div>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `).join('');
-
-                // Update category progress
-                this.data.categories.forEach(cat => {
-                    const checked = cat.topics.filter((_, idx) => 
-                        this.checkedItems.has(`${cat.id}-${idx}`)
-                    ).length;
-                    const percentage = Math.round((checked / cat.topics.length) * 100);
-                    const elem = document.getElementById(`progress-${cat.id}`);
-                    if (elem) {
-                        elem.textContent = `${checked}/${cat.topics.length} completed (${percentage}%)`;
-                    }
-                });
-            },
-
-            renderTrending() {
-                const section = document.getElementById('trendingSection');
-                section.innerHTML = `
-                    <h2>🔥 Booming Topics & Future-Ready Skills</h2>
-                    <div class="trending-topics">
-                        ${this.data.trendingTopics.map(topic => `
-                            <div class="trending-item">
-                                <h3>${topic.name}</h3>
-                                <p>${topic.desc}</p>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            },
-
-            renderInterview() {
-                const section = document.getElementById('interviewSection');
-                section.innerHTML = `
-                    <h2>Interview Preparation Guide</h2>
-                    <div class="interview-questions">
-                        ${this.data.interviewQuestions.map(q => `
-                            <div class="question-card">
-                                <h3>${q.title}</h3>
-                                <p>${q.desc}</p>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            },
-
-            toggleTopic(id) {
-                if (this.checkedItems.has(id)) {
-                    this.checkedItems.delete(id);
-                } else {
-                    this.checkedItems.add(id);
-                }
-                this.saveProgress();
-            },
-
-            showDetail(categoryId) {
-                const category = this.data.categories.find(c => c.id === categoryId);
-                if (!category) return;
-
-                const content = `
-                    <div class="detail-header">
-                        <div class="detail-header-icon">${category.icon}</div>
-                        <div class="detail-header-content">
-                            <h1>${category.name}</h1>
-                            <p>${category.description}</p>
-                        </div>
-                    </div>
-
-                    <div class="detail-content">
-                        <div class="detail-section">
-                            <h2>Overview</h2>
-                            <p>${category.details.overview}</p>
-                        </div>
-
-                        <div class="detail-section">
-                            <h2>Key Topics</h2>
-                            <ul>
-                                ${category.details.keyTopics.map(t => `<li>${t}</li>`).join('')}
-                            </ul>
-                        </div>
-
-                        <div class="detail-section">
-                            <h2>Essential Skills</h2>
-                            <ul>
-                                ${category.details.skills.map(s => `<li>${s}</li>`).join('')}
-                            </ul>
-                        </div>
-
-                        <div class="detail-section">
-                            <h2>Learning Resources</h2>
-                            <ul>
-                                ${category.details.resources.map(r => `<li>${r}</li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="detail-section" style="grid-column: 1 / -1;">
-                        <h2>Interview Tips</h2>
-                        <ul style="columns: 2; column-gap: 2rem;">
-                            ${category.details.interviewTips.map(t => `<li>${t}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    <div style="margin-top: 2rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 1.5rem; border-radius: 8px;">
-                        <h3 style="color: var(--success); margin-bottom: 1rem;">Study Checklist</h3>
-                        <ul class="topics-list">
-                            ${category.topics.map((topic, idx) => `
-                                <li class="topic-item">
-                                    <input type="checkbox" 
-                                        id="detail-${category.id}-${idx}" 
-                                        ${this.checkedItems.has(`${category.id}-${idx}`) ? 'checked' : ''}
-                                        onchange="app.toggleTopic('${category.id}-${idx}')">
-                                    <div class="topic-content">
-                                        <div class="topic-text">
-                                            ${topic.name}
-                                            ${topic.trending ? '<span class="trending-badge">TRENDING</span>' : ''}
-                                        </div>
-                                    </div>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-
-                document.getElementById('detailContent').innerHTML = content;
-                this.switchView('detailView');
-            },
-
-            switchView(viewId) {
-                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-                document.getElementById(viewId).classList.add('active');
-                window.scrollTo(0, 0);
-            },
-
-            backToMain() {
-                this.switchView('mainView');
-                this.renderMain();
-            },
-
-            resetProgress() {
-                if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
-                    this.checkedItems.clear();
-                    this.saveProgress();
-                    this.renderMain();
-                }
-            }
-        };
-
-        // Initialize app on load
-        document.addEventListener('DOMContentLoaded', () => app.init());
-    </script>
 </body>
 </html>
