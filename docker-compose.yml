@@ -2,4 +2,5 @@ services:
   web:
     image: ${DOCKERHUB_USERNAME}/github-actions-app:latest
     ports:
-      - "80:80"
+      - "80:3000"    
+         #ec2 host port:container port
