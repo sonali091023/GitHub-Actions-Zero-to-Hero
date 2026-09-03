@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html")      #Flask's default template directory is template so we will create a template folder and put index.html in it
 
 @app.route("/health")         #Health-check endpoint for Kubernetes probes
 def health():
