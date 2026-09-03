@@ -31,7 +31,7 @@ jobs:
 
       - name: Pull latest image
         run: |
-          docker pull $DOCKERHUB_USERNAME/flask-app:v1
+          docker pull $DOCKERHUB_USERNAME/flask-app:$DOCKER_TAG
 
       - name: Stop old container
         run: |
@@ -43,7 +43,7 @@ jobs:
           docker run -d \
             --name flask-app \
             -p 80:80 \
-            $DOCKERHUB_USERNAME/flask-app:v1
+            $DOCKERHUB_USERNAME/flask-app:$DOCKER_TAG
 
       - name: Verify deployment
         run: |
