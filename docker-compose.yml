@@ -1,6 +1,6 @@
 services:
   web:
-    image: ${DOCKERHUB_USERNAME}/flask-app:v1 
+    image: ${DOCKERHUB_USERNAME}/flask-app:${DOCKER_TAG}
     ports:
       - "80:80"    
          #ec2 host port:container port means EC2 port 80 --> Container port 80 --> Gunicorn port 80 --> Flask application
